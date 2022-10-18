@@ -17,7 +17,7 @@ dataset = pd.read_csv("winequality-white.csv", sep = ';')
 print("RAW DATA")
 print(dataset)
 
-print("Duplicated entries exist: " + dataset.duplicated().any())
+print("Duplicated entries exist: " + str(dataset.duplicated().any()))
 
 dataset.loc[dataset.duplicated(keep='first'), :]
 
