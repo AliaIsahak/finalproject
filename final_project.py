@@ -13,7 +13,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-dataset = pd.read_csv("/content/winequality-white.csv", sep = ';')
+dataset = pd.read_csv("winequality-white.csv", sep = ';')
 
 dataset.duplicated().any()
 
