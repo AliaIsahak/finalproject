@@ -13,7 +13,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-print(dataset = pd.read_csv("winequality-white.csv", sep = ';'))
+dataset = pd.read_csv("winequality-white.csv", sep = ';')
+print("RAW DATA")
+print(dataset)
 
 print("Duplicated entries exist: " + dataset.duplicated().any())
 
