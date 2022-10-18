@@ -1,5 +1,7 @@
-pandas 1.4.0
 streamlit
-sklearn
+pandas
 matplotlib
 seaborn
+sklearn
+
+
