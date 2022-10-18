@@ -14,17 +14,21 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 dataset = pd.read_csv("winequality-white.csv", sep = ';')
-
+print("DATASET")
+print(dataset)
 dataset.duplicated().any()
 
 dataset.loc[dataset.duplicated(keep='first'), :]
+print("DUPLICATED VALUES")
+print(dataset)
 
 data1 = dataset.drop_duplicates()
-data1
+print("CLEANED DATA")
+print(data1)
 
 data1.describe()
 
-"""####Visualisation
+"""Visualisation
 
 """
 
@@ -39,12 +43,14 @@ plt.bar(data1['quality'],data1['alcohol'])
 plt.xlabel('quality')
 #label y-axis
 plt.ylabel('alcohol')
+plt.show()
 
-"""####Correlation"""
+"""Correlation"""
 
 # ploting heatmap
 plt.figure(figsize=[19,10])
 sns.heatmap(data1.corr(),annot=True)
+plt.show()
 
 for a in range(len(data1.corr().columns)):
     for b in range(a):
@@ -56,10 +62,10 @@ new_df=data1.drop('density',axis=1)
 
 new_df.shape
 
-"""####Splitting Dataset"""
+"""Splitting Dataset"""
 
 from sklearn.model_selection import train_test_split
-y = new_df.quality
+y=new_df.quality
 x=new_df.drop('quality',axis=1)
 x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2,random_state=40)
 
