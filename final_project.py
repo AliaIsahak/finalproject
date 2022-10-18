@@ -13,17 +13,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-dataset = pd.read_csv("winequality-white.csv", sep = ';')
-print("DATASET")
-print(dataset)
-dataset.duplicated().any()
+print(dataset = pd.read_csv("winequality-white.csv", sep = ';'))
+
+print("Duplicated entries exist: " + dataset.duplicated().any()
 
 dataset.loc[dataset.duplicated(keep='first'), :]
-print("DUPLICATED VALUES")
-print(dataset)
 
 data1 = dataset.drop_duplicates()
-print("CLEANED DATA")
 print(data1)
 
 data1.describe()
